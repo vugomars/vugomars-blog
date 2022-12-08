@@ -1,29 +1,54 @@
-'use client';
+"use client";
 
-import { useTheme } from 'next-themes';
-import Image from 'next/image';
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 function SwitchLogo() {
-  const { theme } = useTheme();
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <div>
-      {theme === 'light' ? (
+    <motion.div
+      initial={{
+        x: -100,
+        opacity: 0,
+        scale: 0,
+      }}
+      animate={{
+        x: 0,
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+    >
+      {currentTheme === "light" ? (
         <Image
-          src='/images/logo-text.png'
-          alt=' logo'
+          src="/images/logo-text.png"
+          alt=" logo"
           width={200}
           height={150}
         />
       ) : (
         <Image
-          src='/images/dark-logo.png'
-          alt=' logo'
+          src="/images/dark-logo.png"
+          alt=" logo"
           width={200}
           height={150}
         />
       )}
-    </div>
+    </motion.div>
   );
 }
 
