@@ -6,10 +6,10 @@ import '@styles/globals.css';
 function RootLayout({ children }: PropsWithChildren) {
   return (
     <html>
-      <body className='transition-all duration-700 bg-gray-100 dark:bg-gray-800'>
+      <body className='transition-all duration-700 bg-gray-100 dark:bg-gray-800 px-2 md:px-0'>
         <Providers>
           <Header />
-          <div className='fit'>{children}</div>
+          <div className='fit max-w-[1440px] mx-auto'>{children}</div>
           <Footer />
         </Providers>
       </body>
