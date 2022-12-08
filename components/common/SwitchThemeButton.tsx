@@ -20,12 +20,12 @@ function SwitchThemeButton() {
     <div>
       {currentTheme === 'dark' ? (
         <SunIcon
-          className='w-8 h-8 cursor-pointer text-yellow-400'
+          className='w-6 h-6 md:w-8 md:h-8 cursor-pointer text-yellow-400 bg-gray-500 p-1 rounded-full'
           onClick={() => setTheme('light')}
         />
       ) : (
         <MoonIcon
-          className='w-8 h-8 cursor-pointer text-gray-700'
+          className='w-6 h-6 md:w-8 md:h-8 cursor-pointer text-gray-700 bg-gray-300 p-1 rounded-full'
           onClick={() => setTheme('dark')}
         />
       )}
