@@ -20,14 +20,10 @@ function SwitchLogo() {
   return (
     <motion.div
       initial={{
-        x: -100,
         opacity: 0,
-        scale: 0,
       }}
       animate={{
-        x: 0,
         opacity: 1,
-        scale: 1,
       }}
       transition={{
         duration: 1,

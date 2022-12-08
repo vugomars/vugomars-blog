@@ -10,7 +10,7 @@ import Link from "next/link";
 function MobileNavbar() {
   return (
     <nav className="relative lg:hidden">
-      <div className="fixed left-0 bottom-0 flex border-t border-gray-200 dark:border-gray-700 h-14 w-full py-2 items-center justify-between px-4 text-center">
+      <div className="fixed left-0 bottom-0 flex border-t border-gray-300 dark:border-gray-900 h-14 w-full py-2 items-center justify-between px-4 text-center dark:bg-gray-800 bg-gray-200">
         <Link
           href="#"
           className="text-center items-center flex-col justify-center flex"
